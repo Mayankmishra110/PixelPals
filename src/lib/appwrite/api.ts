@@ -61,7 +61,15 @@ export async function saveUserToDB(user: {
 // ============================== SIGN IN
 export async function signInAccount(user: { email: string; password: string }) {
   try {
-    const session = await account.createEmailSession(user.email, user.password);
+    let userId = user.email.split("@")[0]; // Example of deriving userId from email
+    userId = userId.replace(/[^a-zA-Z0-9._-]/g, ""); // Remove invalid characters
+    if (userId.length > 36) {
+      userId = userId.substring(0, 36); // Truncate to 36 characters
+    }
+    if (/^[^a-zA-Z0-9]/.test(userId)) {
+      userId = userId.replace(/^[^a-zA-Z0-9]/, ""); // Remove leading special character
+    }
+    const session = await account.createSession(user.email, user.password);
 
     return session;
   } catch (error) {
@@ -225,6 +233,7 @@ export async function searchPosts(searchTerm: string) {
 }
 
 export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const queries: any[] = [Query.orderDesc("$updatedAt"), Query.limit(9)];
 
   if (pageParam) {
@@ -449,6 +458,7 @@ export async function getRecentPosts() {
 
 // ============================== GET USERS
 export async function getUsers(limit?: number) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const queries: any[] = [Query.orderDesc("$createdAt")];
 
   if (limit) {

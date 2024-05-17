@@ -8,17 +8,23 @@ import { useGetPosts, useSearchPosts } from "@/lib/react-query/queries";
 
 export type SearchResultProps = {
   isSearchFetching: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   searchedPosts: any;
 };
 
-const SearchResults = ({ isSearchFetching, searchedPosts }: SearchResultProps) => {
+const SearchResults = ({
+  isSearchFetching,
+  searchedPosts,
+}: SearchResultProps) => {
   if (isSearchFetching) {
     return <Loader />;
   } else if (searchedPosts && searchedPosts.documents.length > 0) {
     return <GridPostList posts={searchedPosts.documents} />;
   } else {
     return (
-      <p className="text-light-4 mt-10 text-center w-full">No results found</p>
+      <p className="text-black-color dark:text-white-color mt-10 text-center w-full">
+        No results found
+      </p>
     );
   }
 };
@@ -29,13 +35,14 @@ const Explore = () => {
 
   const [searchValue, setSearchValue] = useState("");
   const debouncedSearch = useDebounce(searchValue, 500);
-  const { data: searchedPosts, isFetching: isSearchFetching } = useSearchPosts(debouncedSearch);
+  const { data: searchedPosts, isFetching: isSearchFetching } =
+    useSearchPosts(debouncedSearch);
 
   useEffect(() => {
     if (inView && !searchValue) {
       fetchNextPage();
     }
-  }, [inView, searchValue]);
+  }, [fetchNextPage, inView, searchValue]);
 
   if (!posts)
     return (
@@ -45,14 +52,15 @@ const Explore = () => {
     );
 
   const shouldShowSearchResults = searchValue !== "";
-  const shouldShowPosts = !shouldShowSearchResults && 
+  const shouldShowPosts =
+    !shouldShowSearchResults &&
     posts.pages.every((item) => item.documents.length === 0);
 
   return (
     <div className="explore-container">
       <div className="explore-inner_container">
         <h2 className="h3-bold md:h2-bold w-full">Search Posts</h2>
-        <div className="flex gap-1 px-4 w-full rounded-lg bg-dark-4">
+        <div className="flex gap-1 px-4 w-full rounded-lg bg-accent-color dark:bg-accent-color-dark">
           <img
             src="/assets/icons/search.svg"
             width={24}
@@ -75,13 +83,14 @@ const Explore = () => {
       <div className="flex-between w-full max-w-5xl mt-16 mb-7">
         <h3 className="body-bold md:h3-bold">Popular Today</h3>
 
-        <div className="flex-center gap-3 bg-dark-3 rounded-xl px-4 py-2 cursor-pointer">
+        <div className="flex-center gap-3 bg-accent-color dark:bg-accent-color-dark rounded-xl px-4 py-2 cursor-pointer">
           <p className="small-medium md:base-medium text-light-2">All</p>
           <img
             src="/assets/icons/filter.svg"
             width={20}
             height={20}
             alt="filter"
+            className=""
           />
         </div>
       </div>

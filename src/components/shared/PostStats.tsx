@@ -34,6 +34,7 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
 
   useEffect(() => {
     setIsSaved(!!savedPostRecord);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentUser]);
 
   const handleLikePost = (
@@ -73,7 +74,8 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
 
   return (
     <div
-      className={`flex justify-between items-center z-20 ${containerStyles}`}>
+      className={`flex justify-between items-center z-20 ${containerStyles}`}
+    >
       <div className="flex gap-2 mr-5">
         <img
           src={`${

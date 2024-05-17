@@ -19,6 +19,7 @@ const FileUploader = ({ fieldChange, mediaUrl }: FileUploaderProps) => {
       fieldChange(acceptedFiles);
       setFileUrl(convertFileToUrl(acceptedFiles[0]));
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [file]
   );
 
@@ -32,7 +33,8 @@ const FileUploader = ({ fieldChange, mediaUrl }: FileUploaderProps) => {
   return (
     <div
       {...getRootProps()}
-      className="flex flex-center flex-col bg-dark-3 rounded-xl cursor-pointer">
+      className="flex flex-center flex-col bg-dark-3 rounded-xl cursor-pointer"
+    >
       <input {...getInputProps()} className="cursor-pointer" />
 
       {fileUrl ? (
