@@ -8,6 +8,16 @@ import Home from "./_root/pages/Home";
 import { Toaster } from "./components/ui/toaster";
 
 import "./globals.css";
+import {
+  AllUsers,
+  CreatePost,
+  EditPost,
+  Explore,
+  PostDetails,
+  Profile,
+  Saved,
+  UpdateProfile,
+} from "./_root/pages";
 
 const App = () => {
   return (

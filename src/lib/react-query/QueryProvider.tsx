@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React from "react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
