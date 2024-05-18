@@ -8,7 +8,6 @@ import { useGetPosts, useSearchPosts } from "@/lib/react-query/queries";
 
 export type SearchResultProps = {
   isSearchFetching: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   searchedPosts: any;
 };
 
@@ -42,7 +41,7 @@ const Explore = () => {
     if (inView && !searchValue) {
       fetchNextPage();
     }
-  }, [fetchNextPage, inView, searchValue]);
+  }, [inView, searchValue]);
 
   if (!posts)
     return (
