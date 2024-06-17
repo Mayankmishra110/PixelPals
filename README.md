@@ -2,7 +2,8 @@
 
 # **PixelPals**
 
-![Style.png](<Screenshot (696).png>)
+
+![Screenshot (696)](https://github.com/Mayankmishra110/PixelPals/assets/96439214/32bde973-eaac-457f-aba5-09eda46b8a72)
 
 
 ## **Live Demo**
