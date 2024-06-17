@@ -1,14 +1,17 @@
-# Pixel-pals Social Media
+# PixelPals Social Media
 
-# **Pixel-pals**
+# **PixelPals**
 
-![Demo image](image.png)
+![Style.png](<Screenshot (696).png>)
+
 
 ## **Live Demo**
 
-Check out the live demo [here](https://snapgram-sand.vercel.app/)
+Check out the live demo [here](https://pixels-pals.vercel.app/)
 
 ## **Description**
+
+PixelPals is a social media (Instagram Clone)built with React, React Context, React Query, Typescript, Tailwind CSS, and Appwrite for the backend. It features a beautiful UI with light and dark themes, user authentication, post creation, profile viewing, following, liking posts, saving posts, and more.
 
 ## **Tech Stack**
 
@@ -68,42 +71,42 @@ and many more, including code architecture and reusability
    - Start Creating the following collections in `Pixel-pals-db`
      - **Saves**
        - add the following attributes
-       | Propertie | Type               |
-       | --------- | ------------------ |
-       | user      | Relation with user |
-       | post      | Relation with post |
+         | Propertie | Type |
+         | --------- | ------------------ |
+         | user | Relation with user |
+         | post | Relation with post |
      - Posts
        - add the following attributes
-       | Propertie | Type                      |
-       | --------- | ------------------------- |
-       | creator   | Relationship with creator |
-       | likes     | Relationship with likes   |
-       | caption   | String                    |
-       | tags      | String []                 |
-       | imageUrl  | Url                       |
-       | imageId   | String                    |
-       | location  | String                    |
-       | save      | Relationship with save    |
+         | Propertie | Type |
+         | --------- | ------------------------- |
+         | creator | Relationship with creator |
+         | likes | Relationship with likes |
+         | caption | String |
+         | tags | String [] |
+         | imageUrl | Url |
+         | imageId | String |
+         | location | String |
+         | save | Relationship with save |
        - add the following indexes
-       | key     | Type     | arttributes | asc/desc |
-       | ------- | -------- | ----------- | -------- |
-       | caption | fulltext | caption     | DESC     |
+         | key | Type | arttributes | asc/desc |
+         | ------- | -------- | ----------- | -------- |
+         | caption | fulltext | caption | DESC |
      - Users
        - add the following attributes
-       | Propertie | Type                      |
-       | --------- | ------------------------- |
-       | creator   | Relationship with creator |
-       | likes     | Relationship with likes   |
-       | caption   | String                    |
-       | tags      | String []                 |
-       | imageUrl  | Url                       |
-       | imageId   | String                    |
-       | location  | String                    |
-       | save      | Relationship with save    |
+         | Propertie | Type |
+         | --------- | ------------------------- |
+         | creator | Relationship with creator |
+         | likes | Relationship with likes |
+         | caption | String |
+         | tags | String [] |
+         | imageUrl | Url |
+         | imageId | String |
+         | location | String |
+         | save | Relationship with save |
        - add the following indexes
-       | key     | Type     | arttributes | asc/desc |
-       | ------- | -------- | ----------- | -------- |
-       | caption | fulltext | caption     | DESC     |
+         | key | Type | arttributes | asc/desc |
+         | ------- | -------- | ----------- | -------- |
+         | caption | fulltext | caption | DESC |
 
 4. Add `.env.local` Variables
 
